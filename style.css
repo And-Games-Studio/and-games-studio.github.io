@@ -60,6 +60,7 @@ h2 {
 	color: var(--text);
 	text-decoration: none;
 }
+.game + .game { border-top: none; }
 .game img { width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0; }
 .game strong { display: block; font-weight: 600; }
 .game span { color: var(--muted); font-size: 15px; }
