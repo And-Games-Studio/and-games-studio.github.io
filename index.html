@@ -4,48 +4,117 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>And Games</title>
-	<meta name="description" content="And Games, an independent game studio.">
+	<meta name="description" content="And Games is an independent game studio making games for phones and PC: Split It!, ReVive, You Are Always Few and Solo Defending.">
+	<meta name="color-scheme" content="light dark">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="And Games">
+	<meta property="og:description" content="An independent game studio making games for phones and PC.">
+	<meta property="og:url" content="https://and-games-studio.github.io/">
+	<link rel="icon" href="images/mark.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<header class="hero">
+		<img class="mark" src="images/mark.svg" alt="" width="72" height="72">
+		<div>
+			<h1>And Games</h1>
+			<p>An independent game studio making games for phones and PC.</p>
+		</div>
+	</header>
+
 	<main>
-		<h1>And Games</h1>
-		<p class="lead">An independent game studio.</p>
+		<section aria-labelledby="games">
+			<h2 id="games">Games</h2>
+			<div class="games">
 
-		<h2>Games</h2>
-		<a class="game" href="splitit/">
-			<img src="images/splitit.png" alt="">
-			<div>
-				<strong>Split It!</strong>
-				<span>Arcade, alone or online · Android</span>
-			</div>
-		</a>
-		<a class="game" href="revive/">
-			<img src="images/revive.png" alt="">
-			<div>
-				<strong>ReVive · A Fresh Start</strong>
-				<span>Cozy restoration · Android</span>
-			</div>
-		</a>
-		<a class="game" href="youarealwaysfew/">
-			<img src="images/youarealwaysfew.png" alt="">
-			<div>
-				<strong>You Are Always Few</strong>
-				<span>Bullet heaven · Android</span>
-			</div>
-		</a>
-		<a class="game" href="solodefending/">
-			<img src="images/solodefending.png" alt="">
-			<div>
-				<strong>Solo Defending</strong>
-				<span>Hero tower defense · Windows, Android</span>
-			</div>
-		</a>
+				<article class="game">
+					<img class="art" src="images/splitit-art.webp" alt="" width="1024" height="500">
+					<div class="body">
+						<div class="head">
+							<img class="icon" src="images/splitit.png" alt="" width="64" height="64">
+							<div class="names">
+								<p class="genre">Arcade</p>
+								<h3><a class="open" href="splitit/">Split It!</a></h3>
+							</div>
+							<span class="go" aria-hidden="true">→</span>
+						</div>
+						<p class="about">Fire your harpoon and split every bubble, alone or online with up to four friends.</p>
+						<ul class="stores" aria-label="Split It! platforms">
+							<li><a class="store" href="https://play.google.com/store/apps/details?id=games.and.splitit" aria-label="Split It! for Android on Google Play"><small>Android</small><b>Google Play</b></a></li>
+							<li><span class="store soon"><small>iOS</small><b>Coming soon</b></span></li>
+						</ul>
+					</div>
+				</article>
 
-		<h2>Contact</h2>
-		<p><a href="mailto:ebano.andrea.games@gmail.com">ebano.andrea.games@gmail.com</a></p>
-		<p class="lead">Each game's privacy policy and support page are on its own site.</p>
+				<article class="game">
+					<img class="art" src="images/revive-art.webp" alt="" width="1024" height="500">
+					<div class="body">
+						<div class="head">
+							<img class="icon" src="images/revive.png" alt="" width="64" height="64">
+							<div class="names">
+								<p class="genre">Cozy restoration</p>
+								<h3><a class="open" href="revive/">ReVive · A Fresh Start</a></h3>
+							</div>
+							<span class="go" aria-hidden="true">→</span>
+						</div>
+						<p class="about">Clean, fix and decorate old rooms and bring a grey little town back to colour.</p>
+						<ul class="stores" aria-label="ReVive platforms">
+							<li><span class="store soon"><small>Android</small><b>Coming soon</b></span></li>
+							<li><span class="store soon"><small>iOS</small><b>Coming soon</b></span></li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="game">
+					<img class="art" src="images/youarealwaysfew-art.webp" alt="" width="1024" height="500">
+					<div class="body">
+						<div class="head">
+							<img class="icon" src="images/youarealwaysfew.png" alt="" width="64" height="64">
+							<div class="names">
+								<p class="genre">Bullet heaven</p>
+								<h3><a class="open" href="youarealwaysfew/">You Are Always Few</a></h3>
+							</div>
+							<span class="go" aria-hidden="true">→</span>
+						</div>
+						<p class="about">Ultimo, the last name in the Tally, alone against endless hordes.</p>
+						<ul class="stores" aria-label="You Are Always Few platforms">
+							<li><span class="store soon"><small>Android</small><b>Coming soon</b></span></li>
+							<li><span class="store soon"><small>iOS</small><b>Coming soon</b></span></li>
+						</ul>
+					</div>
+				</article>
+
+				<article class="game">
+					<img class="art" src="images/solodefending-art.webp" alt="" width="1024" height="500">
+					<div class="body">
+						<div class="head">
+							<img class="icon" src="images/solodefending.png" alt="" width="64" height="64">
+							<div class="names">
+								<p class="genre">Hero tower defense</p>
+								<h3><a class="open" href="solodefending/">Solo Defending</a></h3>
+							</div>
+							<span class="go" aria-hidden="true">→</span>
+						</div>
+						<p class="about">Build by day, fight by night, and turn the elites who came for you into your Legion.</p>
+						<ul class="stores" aria-label="Solo Defending platforms">
+							<li><span class="store soon"><small>Android</small><b>Coming soon</b></span></li>
+							<li><span class="store soon"><small>iOS</small><b>Coming soon</b></span></li>
+							<li><span class="store soon"><small>Steam</small><b>Coming soon</b></span></li>
+						</ul>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<section class="contact" aria-labelledby="contact">
+			<h2 id="contact">Contact</h2>
+			<p><a class="mail" href="mailto:ebano.andrea.games@gmail.com">ebano.andrea.games@gmail.com</a></p>
+			<p class="note">Each game's privacy policy and support page are on its own site.</p>
+		</section>
 	</main>
+
 	<footer>© 2026 And Games</footer>
 </body>
 </html>

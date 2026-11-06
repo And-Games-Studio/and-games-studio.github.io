@@ -1,19 +1,23 @@
-/* And Games: the studio's page. Plain and neutral; each game's own site has the game's look. */
+/* And Games: the studio's page. Neutral, so the games' art carries the colour; each game's own site has the game's look. */
 :root {
-	--bg: #ffffff;
-	--text: #1d1d1f;
-	--muted: #6e6e73;
-	--line: #e3e3e8;
+	--bg: #f5f5f7;
+	--card: #ffffff;
+	--text: #16171b;
+	--muted: #63636a;
+	--line: #e0e0e6;
 	--link: #2457c5;
+	--shadow: 0 14px 34px rgba(22, 23, 27, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg: #121214;
+		--bg: #0f1013;
+		--card: #18191d;
 		--text: #f2f2f4;
-		--muted: #a1a1a8;
-		--line: #2c2c31;
-		--link: #7ea6ff;
+		--muted: #a4a4ab;
+		--line: #2b2c32;
+		--link: #8fb2ff;
+		--shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
 	}
 }
 
@@ -26,50 +30,203 @@ body {
 	color: var(--text);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-size: 17px;
-	line-height: 1.6;
-}
-
-main {
-	max-width: 680px;
-	margin: 0 auto;
-	padding: 64px 16px 24px;
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
 }
 
 a { color: var(--link); }
 
-h1 { font-size: 30px; font-weight: 600; margin: 0; letter-spacing: -0.3px; }
-.lead { color: var(--muted); margin: 4px 0 40px; }
-
-h2 {
-	font-size: 13px;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: var(--muted);
-	margin: 40px 0 8px;
+.hero, main, footer {
+	max-width: 1088px;
+	margin: 0 auto;
+	padding-left: 24px;
+	padding-right: 24px;
 }
 
-/* One row a game: its icon, name and a line about it, linking to its page. */
-.game {
+/* The studio's name and what it does. */
+.hero {
 	display: flex;
 	align-items: center;
-	gap: 16px;
-	padding: 14px 0;
-	border-top: 1px solid var(--line);
-	border-bottom: 1px solid var(--line);
-	color: var(--text);
-	text-decoration: none;
+	gap: 22px;
+	padding-top: 72px;
+	padding-bottom: 48px;
 }
-.game + .game { border-top: none; }
-.game img { width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0; }
-.game strong { display: block; font-weight: 600; }
-.game span { color: var(--muted); font-size: 15px; }
-.game:hover strong { color: var(--link); }
+.mark { width: 72px; height: 72px; flex-shrink: 0; }
+h1 {
+	margin: 0;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 1.1;
+	letter-spacing: -0.8px;
+}
+.hero p { margin: 6px 0 0; color: var(--muted); font-size: 19px; }
+
+h2 {
+	margin: 0 0 16px;
+	color: var(--muted);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+/* One card a game: all of it opens the game's page, except its store buttons. */
+.games {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+.game {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: 20px;
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.art {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1024 / 500;
+	background: var(--line);
+}
+.body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 0 24px 24px;
+}
+.head {
+	display: flex;
+	align-items: flex-end;
+	gap: 14px;
+}
+.icon {
+	flex-shrink: 0;
+	width: 72px;
+	height: 72px;
+	margin-top: -24px;
+	border: 3px solid var(--card);
+	border-radius: 18px;
+	background: var(--card);
+	position: relative;
+}
+.names { flex: 1; min-width: 0; padding-top: 12px; }
+.genre {
+	margin: 0;
+	color: var(--muted);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.7px;
+	text-transform: uppercase;
+}
+h3 {
+	margin: 0;
+	font-size: 21px;
+	font-weight: 650;
+	line-height: 1.25;
+	letter-spacing: -0.2px;
+}
+.open { color: inherit; text-decoration: none; }
+/* The title's link stretches over the whole card. */
+.open::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+}
+.open:focus-visible { outline: none; }
+.open:focus-visible::after { outline: 3px solid var(--link); outline-offset: -3px; }
+.go {
+	align-self: center;
+	margin-top: 12px;
+	color: var(--muted);
+	font-size: 22px;
+	line-height: 1;
+	transition: transform 0.18s ease, color 0.18s ease;
+}
+.about { margin: 14px 0 20px; color: var(--muted); font-size: 16px; }
+
+/* The stores: solid when the link is live, outlined until then. */
+.stores {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: auto 0 0;
+	padding: 0;
+	list-style: none;
+}
+.stores li { display: flex; flex: 0 1 146px; min-width: 0; }
+.store {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 9px 14px 10px;
+	border: 1px solid var(--text);
+	border-radius: 12px;
+	background: var(--text);
+	color: var(--bg);
+	line-height: 1.2;
+	text-decoration: none;
+	white-space: nowrap;
+}
+a.store {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.18s ease, opacity 0.18s ease;
+}
+a.store:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+.store small { font-size: 11.5px; font-weight: 500; letter-spacing: 0.3px; opacity: 0.72; }
+.store b { font-size: 15px; font-weight: 600; }
+.store.soon {
+	border-color: var(--line);
+	background: transparent;
+	color: var(--muted);
+}
+.store.soon small { opacity: 1; }
+.store.soon b { font-weight: 500; }
+
+@media (hover: hover) {
+	.game:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+	.game:hover .go { color: var(--text); transform: translateX(4px); }
+	a.store:hover { opacity: 0.86; transform: translateY(-1px); }
+}
+
+.contact {
+	margin-top: 56px;
+	padding-top: 32px;
+	border-top: 1px solid var(--line);
+}
+.contact p { margin: 0; }
+.mail { font-size: 19px; font-weight: 500; }
+.contact .note { margin-top: 6px; color: var(--muted); font-size: 15px; }
 
 footer {
-	max-width: 680px;
-	margin: 0 auto;
-	padding: 24px 16px 40px;
+	padding-top: 32px;
+	padding-bottom: 48px;
 	color: var(--muted);
 	font-size: 14px;
+}
+
+@media (max-width: 760px) {
+	.hero { padding-top: 40px; padding-bottom: 32px; gap: 16px; }
+	.mark { width: 56px; height: 56px; }
+	h1 { font-size: 34px; letter-spacing: -0.5px; }
+	.hero p { font-size: 16px; margin-top: 2px; }
+	.hero, main, footer { padding-left: 16px; padding-right: 16px; }
+	.games { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+	.body { padding: 0 16px 16px; }
+	.icon { width: 64px; height: 64px; border-radius: 16px; }
+	h3 { font-size: 19px; }
+	/* Three buttons share a row down to a 375 px phone; below that the third wraps. */
+	.stores li { flex: 1 1 96px; }
+	.store { padding: 8px 6px 9px 9px; }
+	.store b { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* { transition: none !important; }
 }
